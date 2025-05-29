@@ -27,8 +27,8 @@ const Header = () => {
         items-center uppercase`}>
         <a href='' className='hover:text-accent transition'>Home</a>
         <a href='' className='hover:text-accent transition'>Rooms</a>
-        <a href='' className='hover:text-accent transition'>Restaurant</a>
-        <a href='' className='hover:text-accent transition'>Spa</a>
+        <a href='' className='hover:text-accent transition'>Attraction</a>
+        <a href='' className='hover:text-accent transition'>Gallery</a>
         <a href='' className='hover:text-accent transition'>Contact</a>
       </nav>
     </div>

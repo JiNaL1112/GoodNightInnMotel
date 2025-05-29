@@ -16,38 +16,51 @@ const slides = [
   {
     title: 'Youre Luxury Hotel For Vaction',
     bg: Img1,
-    btnText: 'Room & Suites',
+    btnText: 'See our rooms',
   },
   {
     title: 'Youre Luxury Hotel For Vaction',
     bg: Img2,
-    btnText: 'Room & Suites',
+    btnText: 'See our rooms',
   },
   {
     title: 'Youre Luxury Hotel For Vaction',
     bg: Img3,
-    btnText: 'Room & Suites',
+    btnText: 'See our rooms',
   }
 ]
 
 const HeroSlider = () => {
   return (
-    <Swiper className='heroSlider h-[600px] lg:h-[860px]'>
+    <Swiper 
+    modules={[EffectFade,Autoplay]} 
+    effect={'fade'}
+    loop={true}
+    autoplay={{
+      delay: 3000,
+      disableOnInteraction: false,
+    }}
+    className='heroSlider h-[600px] lg:h-[860px]'>
       {slides.map((slide,index)=> {
         //destructure slide
         const { title , bg , btnText} = slide;
-        return <SwiperSlide className='h-full bg-pink-300' key={index}>
-          <div>
-            <div>Just Enjoy and relax</div>
+        return <SwiperSlide className='h-full  relative flex justify-center items-center' key={index}>
+          <div className='z-20 text-white text-center'>
+            <div className='uppercase font-tertiary tracking-[6px] mb-5'>Just Enjoy and relax</div>
+            <h1 className='text-[32px] font-primary uppercase tracking-[2px] max-w-[920px] lg:text-[68px] leading-tight mb-6'>{title}</h1>
+            <button className='btn btn-lg btn-primary mx-auto'>
+              {btnText}
+            </button>
           </div>
           <div className='absolute top-0 w-full h-full'>
             <img 
               className='object-cover h-full w-full' 
-              src={slide.bg} 
+              src={bg} 
               alt=''
             />
           </div>
           { /*overlay*/}
+          <div className='absolute w-full h-full bg-black/70'></div>
           
         </SwiperSlide>
       })}
